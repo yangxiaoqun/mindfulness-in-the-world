@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<script src="http://pv.sohu.com/cityjson?ie=utf-8" type="text/javascript"></script>
 <head>
   <meta charset="utf-8">
   
@@ -209,7 +210,21 @@
         
       </div>
       <footer id="footer">
-  
+<script type="text/javascript">
+    var href = window.location.href; // 当前页面地址
+
+    function handleCallback(jsonData) {
+        console.log("jsonData = " + jsonData);
+        var arrival = jsonData.arrival;
+        document.getElementById("page_view").innerHTML = arrival;
+    }
+    
+    var src = "https://106.14.152.93:8443/third/githubio/arrival?callback=handleCallback&articleUrl="
+         + href + "&ip=" + returnCitySN["cip"];
+    
+    document.write("<script type=\"text/javascript\" src=\"" + src + "\"><\/script>");
+  </script>
+
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2020 杨小群<br>
@@ -217,6 +232,7 @@
     </div>
   </div>
 </footer>
+
     </div>
     <nav id="mobile-nav">
   

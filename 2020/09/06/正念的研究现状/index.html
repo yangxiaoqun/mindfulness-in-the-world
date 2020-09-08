@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<script src="http://pv.sohu.com/cityjson?ie=utf-8" type="text/javascript"></script>
 <head>
   <meta charset="utf-8">
   
@@ -94,7 +95,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/09/06/%E6%AD%A3%E5%BF%B5%E7%9A%84%E7%A0%94%E7%A9%B6%E7%8E%B0%E7%8A%B6/" data-id="ckespo0a2000u3cv28n308iah" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/09/06/%E6%AD%A3%E5%BF%B5%E7%9A%84%E7%A0%94%E7%A9%B6%E7%8E%B0%E7%8A%B6/" data-id="cketfdtof000vhwv2dj4macev" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%AD%A3%E5%BF%B5%E7%A0%94%E7%A9%B6/" rel="tag">正念研究</a></li></ul>
@@ -196,7 +197,21 @@
         
       </div>
       <footer id="footer">
-  
+<script type="text/javascript">
+    var href = window.location.href; // 当前页面地址
+
+    function handleCallback(jsonData) {
+        console.log("jsonData = " + jsonData);
+        var arrival = jsonData.arrival;
+        document.getElementById("page_view").innerHTML = arrival;
+    }
+    
+    var src = "https://106.14.152.93:8443/third/githubio/arrival?callback=handleCallback&articleUrl="
+         + href + "&ip=" + returnCitySN["cip"];
+    
+    document.write("<script type=\"text/javascript\" src=\"" + src + "\"><\/script>");
+  </script>
+
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2020 杨小群<br>
@@ -204,6 +219,7 @@
     </div>
   </div>
 </footer>
+
     </div>
     <nav id="mobile-nav">
   
